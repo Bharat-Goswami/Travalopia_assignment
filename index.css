@@ -1,0 +1,373 @@
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-color: #000000;
+  }
+  .container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+  .header, .footer {
+
+    height: 100px;
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+
+  .header h1{
+    letter-spacing: .15em;
+  }
+
+
+  .header h1::before{
+    content: attr(data-item);
+    transition: 0.5s;
+    color: rgb(252, 181, 49);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 0;
+    overflow: hidden;
+  }
+
+  .header h1:hover::before {
+    width: 100%;
+    transition: all 0.5s ease-in-out;
+  }
+
+
+  .menuItems {
+    list-style: none;
+    display: flex;
+  }
+  
+ .menuItems li {
+    margin: 50px;
+  }
+  
+.menuItems li a {
+    text-decoration: none;
+    color: #c2c2c2;
+    font-size: 24px;
+    font-weight: 400;
+    transition: all 0.5s ease-in-out;
+    position: relative;
+    text-transform: uppercase;
+  }
+  
+ .menuItems li a::before {
+    content: attr(data-item);
+    transition: 0.5s;
+    color: rgb(252, 181, 49);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 0;
+    overflow: hidden;
+  }
+  
+  .menuItems li a:hover::before {
+    width: 100%;
+    transition: all 0.5s ease-in-out;
+  }
+  .content {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0, 0, 0);
+  }
+  .title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    font-size: 24px;
+    z-index: 2;
+  }
+
+  .title h1 {
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+    /* box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px, 0 0 10px rgb(252, 170, 19); Adding glow effect to the box-shadow */
+    border-right: .15em solid transparent; /* Making the border transparent */
+    white-space: nowrap; /* Keeps the content on a single line */
+    margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+    letter-spacing: .15em; /* Adjust as needed */
+    text-shadow: .1em .1em 0 hsl(200 50% 30%);
+   
+    animation: 
+      typing 3.5s steps(40, end),
+      blink-caret .75s step-end infinite,
+      /* glow-border 1.5s ease-in-out infinite alternate, Adding animation for glowing border */
+      glow-text 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes glow-text {
+    0% {
+      text-shadow: 0 0 5px rgb(252, 170, 19); /* Initial state of the text glow */
+    }
+    100% {
+      text-shadow: 0 0 15px rgb(252, 170, 19), 0 0 20px rgb(252, 170, 19), 0 0 30px rgb(252, 170, 19); /* Final state of the text glow */
+    }
+  }
+  
+  /* The typing effect */
+  @keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+  }
+  
+  /* The typewriter cursor effect */
+  @keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: rgb(252, 170, 19); }
+  }
+  @keyframes glow-border {
+    0% {
+      border-color: transparent; /* Initial state of the border */
+      box-shadow: rgba(0, 0, 0, 0.35) 0px 0px 0px, 0 0 00px orange; /* Initial state of the glow */
+    }
+    100% {
+      border-color:rgb(250, 175, 35); /* Final state of the border */
+      box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px, 0 0 20px rgb(252, 170, 19);
+    }
+  }
+  /* .button {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 2;
+  } */
+  /* Fluid image */
+  .background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+  }
+
+/* CSS */
+.button-85 {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+  padding: 1em 2em;
+  border: none;
+  outline: none;
+  color: rgb(255, 255, 255);
+  background: #111;
+  cursor: pointer;
+  position: relative;
+  
+  border-radius: 10px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+.text::after{
+    content:"";
+    position:absolute;
+    bottom: 25px;
+    left: 35px;
+    width: 55%;
+    height: 2px;
+    background:#ffd200;
+    transform: scaleX(0);   
+    transition: 1s;
+}
+.text:hover::after{
+    transform: scaleX(1.2);
+
+}
+
+.button-85:before {
+  content: "";
+  background: linear-gradient(
+    45deg,
+    #ff0000,
+    #ff7300,
+    #fffb00,
+    #48ff00,
+    #00ffd5,
+    #002bff,
+    #7a00ff,
+    #ff00c8,
+    #ff0000
+  );
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  -webkit-filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing-button-85 20s linear infinite;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 10px;
+}
+
+@keyframes glowing-button-85 {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+.button-85:after {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #222;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+
+/* Tost box */
+#tostBox{
+    z-index: 999;
+
+position: fixed; /* Change from absolute to fixed */
+  bottom: 80px;   /* Change from top to bottom */
+  right: 15px; 
+transform: translateX(0); 
+display: flex;
+align-items: center; 
+flex-direction: column;
+overflow: hidden;
+padding: 20px;
+}
+
+.sucess{
+     border-radius: 20px;
+z-index: 1000; 
+width: 260px;
+height: 80px;
+background: transparent;
+font-weight: 500;
+margin: 15px 0;
+box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+display: flex;
+align-items: center;
+position: relative;
+backdrop-filter: blur(10px);
+}
+.sucess i{
+margin: 0 20px;
+font-size: 35px;
+color: rgb(19, 196, 3);
+padding-right: 10px;
+border-right: 1px solid rgb(205, 203, 203);
+}
+.sucess::after{
+content:"";
+position: absolute;
+left: 0 px;
+bottom: 8px;
+width: 100%;
+height: 5px;
+background-color:  rgb(19, 196, 3);
+animation: anim 2s linear forwards;
+}
+
+@keyframes anim {
+100%{
+    width: 0;
+}
+}
+.sucess h2{
+    color: white;
+}
+.footer_inner {
+    position: absolute;
+    font-size: 12px;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+    line-height: 60px;
+    font-size: 20px;
+    background-color: #000000;
+    color: #ffffff;
+    text-align: center;
+  }
+
+  .footer_inner a {
+    text-decoration: none;
+    color: inherit;
+    border-bottom: 1px solid;
+
+    &:hover {
+      border-bottom: 1px transparent;
+    }
+  }
+  @media screen and (max-width: 576px) {
+    .button-85 {
+        padding: 5px;
+    }
+    .title {
+        font-size: 12px;
+    }
+    .footer_inner {
+        line-height: 50px;
+    }
+
+    .title h1 {
+        text-wrap: wrap;
+    }
+    .text::after{
+        content:"";
+        position:absolute;
+        bottom: 20px;
+        left: 15px;
+        width: 70%;
+        height: 2px;
+        background:#ffd200;
+        transform: scaleX(0);   
+        transition: 1s;
+    }
+
+  }
+  

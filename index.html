@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Full Page Component</title>
+  <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+  <div class="container">
+    <div id="tostBox"></div>
+    <div class="header"><h1>Travelopia</h1>
+
+      <!-- <ul class="menuItems">
+        <li><a href='#' data-item='Home'>Home</a></li>
+        <li><a href='#' data-item='About'>About</a></li>
+        <li><a href='#' data-item='Projects'>Projects</a></li>
+        <li><a href='#' data-item='Blog'>Blog</a></li>
+        <li><a href='#' data-item='Contact'>Contact</a></li>
+      </ul> -->
+
+    </div>
+    <div class="content">
+      <!-- Image added here -->
+      <img src="./HD wallpaper_ cyber, science fiction, digital art, concept art, cyberpunk.jfif" alt="Background Image" class="background-image">
+      <div class="overlay">
+        <div class="title"><h1 >WELCOME TO FUTURE</h1></div>
+        <button class="button-85" role="button" onclick=(showtost())><h2 class="text">Click me !</h2></button>
+      </div>
+      
+    </div>
+    <div class="footer">
+      <div class="footer_inner">&copy; Developed with ❤️</i> by
+        <a href="https://www.linkedin.com/in/bharat-goswami-47181b24b/" class="white-text" target="_blank">Bharat Goswami</a>. <a href="https://github.com/Bharat-Goswami" target="_blank">Check my Github </a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Function to show alert
+    function showAlert() {
+      alert("Hello, World");
+    }
+    var tostBox = document.getElementById("tostBox");
+function showtost(){
+  var tost = document.createElement("div");
+    tost.classList.add("sucess");
+    tost.innerHTML = "<i class='bx bx-check-circle'></i>" +"<h2>Hello, World 😊</h2>";
+
+  tostBox.appendChild(tost);
+  setTimeout(()=>{
+    tost.remove();
+  },2000);
+
+}
+  </script>
+</body>
+</html>
