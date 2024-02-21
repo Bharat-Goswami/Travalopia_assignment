@@ -108,48 +108,46 @@ html, body {
   }
 
   .title h1 {
-    overflow: hidden; /* Ensures the content is not revealed until the animation */
-    /* box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px, 0 0 10px rgb(252, 170, 19); Adding glow effect to the box-shadow */
-    border-right: .15em solid transparent; /* Making the border transparent */
-    white-space: nowrap; /* Keeps the content on a single line */
-    margin: 0 auto; /* Gives that scrolling effect as the typing happens */
-    letter-spacing: .15em; /* Adjust as needed */
+    overflow: hidden; 
+    border-right: .15em solid transparent; 
+    white-space: nowrap; 
+    margin: 0 auto;
+    letter-spacing: .15em; 
     text-shadow: .1em .1em 0 hsl(200 50% 30%);
    
     animation: 
       typing 3.5s steps(40, end),
       blink-caret .75s step-end infinite,
-      /* glow-border 1.5s ease-in-out infinite alternate, Adding animation for glowing border */
       glow-text 1.5s ease-in-out infinite alternate;
 }
 
 @keyframes glow-text {
     0% {
-      text-shadow: 0 0 5px rgb(252, 170, 19); /* Initial state of the text glow */
+      text-shadow: 0 0 5px rgb(252, 170, 19); 
     }
     100% {
-      text-shadow: 0 0 15px rgb(252, 170, 19), 0 0 20px rgb(252, 170, 19), 0 0 30px rgb(252, 170, 19); /* Final state of the text glow */
+      text-shadow: 0 0 15px rgb(252, 170, 19), 0 0 20px rgb(252, 170, 19), 0 0 30px rgb(252, 170, 19); 
     }
   }
   
-  /* The typing effect */
+  
   @keyframes typing {
     from { width: 0 }
     to { width: 100% }
   }
   
-  /* The typewriter cursor effect */
+
   @keyframes blink-caret {
     from, to { border-color: transparent }
     50% { border-color: rgb(252, 170, 19); }
   }
   @keyframes glow-border {
     0% {
-      border-color: transparent; /* Initial state of the border */
-      box-shadow: rgba(0, 0, 0, 0.35) 0px 0px 0px, 0 0 00px orange; /* Initial state of the glow */
+      border-color: transparent; 
+      box-shadow: rgba(0, 0, 0, 0.35) 0px 0px 0px, 0 0 00px orange; 
     }
     100% {
-      border-color:rgb(250, 175, 35); /* Final state of the border */
+      border-color:rgb(250, 175, 35); 
       box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px, 0 0 20px rgb(252, 170, 19);
     }
   }
@@ -269,8 +267,8 @@ html, body {
 #tostBox{
     z-index: 999;
 
-position: fixed; /* Change from absolute to fixed */
-  bottom: 80px;   /* Change from top to bottom */
+position: fixed; 
+  bottom: 80px;   
   right: 15px; 
 transform: translateX(0); 
 display: flex;
